@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-211.7628.24">
+    <data-source name="Odoo" uuid="83cfad8d-cbfc-45c9-b266-75fa5359d282">
+      <database-info product="PostgreSQL" version="10.17 (Ubuntu 10.17-1.pgdg16.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="10.17" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>moreproducts</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database">
+            <name qname="llevatelo" />
+            <name qname="llevatelo_pruebas" />
+            <name qname="moreproducts" />
+            <name qname="moreproducts_pruebas_fe" />
+            <name qname="moreproducts_pruebas_01072021" />
+            <node kind="schema" qname="public" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <ssh-config-id>da4754b7-0125-4f8a-b4af-9758bd470a20</ssh-config-id>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>

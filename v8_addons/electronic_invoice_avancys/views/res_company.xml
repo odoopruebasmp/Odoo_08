@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+    <data>
+        <record id="res_company_electronic_invoice_policies_form" model="ir.ui.view">
+            <field name="name">res.company.electronic.invoice.policies.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="inventory_account.view_company_sale_cost_invoice_form_avancys" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Validacion de factura de venta']" position="after">
+                    <group string="Facturación Electrónica">
+                        <field name="electronic_invoice" />
+                        <field name="ei_automatic_gen" attrs="{'invisible': [('electronic_invoice','=',False)]}" />
+                        <field name="ei_automatic_read" attrs="{'invisible': [('electronic_invoice','=',False)]}" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_company_electronic_invoice_form" model="ir.ui.view">
+            <field name="name">res.company.electronic.invoice.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field eval="20" name="priority" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Report Configuration']" position="after">
+                    <page string="Factura Electrónica" groups="electronic_invoice_avancys.group_admin_electronic_invoice" attrs="{'invisible': [('electronic_invoice', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="ei_database" />
+                            </group>
+                            <group>
+                                <field name="ei_server_type" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Servicio WEB">
+                                <group>
+                                    <group>
+                                        <field name="service_url" attrs="{'required': [('electronic_invoice', '=', True)]}" invisible="1" />
+                                        <field name="service_url_get" attrs="{'required': [('electronic_invoice', '=', True)]}" invisible="1" />
+                                        <field name="service_url_post" attrs="{'required': [('electronic_invoice', '=', True)]}" />
+                                        <field name="software_code" attrs="{'required': [('electronic_invoice', '=', True)]}" />
+                                        <field name="ei_temporal_files" attrs="{'required': [('electronic_invoice', '=', True)]}" />
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+
+                            <page string="Políticas">
+                                <group>
+                                    <group>
+                                        <field name="xml_automatic_generation" />
+                                        <field name="auto_acceptance_email" />
+                                        <field name="invoice_batch_process" invisible="1" />
+                                    </group>
+                                    <group>
+                                        <field name="send_cus_po" />
+                                        <field name="send_remission" />
+                                        <field name="send_cus_att" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Parametrización">
+                                <group string="Tipo de Operación">
+                                    <field name="ei_operation_type" />
+                                    <field name="tributary_obligations" />
+                                    <field name="ei_pdf_template" />
+                                    <field name="mail_server_id" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>  

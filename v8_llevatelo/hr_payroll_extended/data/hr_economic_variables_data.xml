@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+    <data>
+
+        <record id="unemployment_rate_id" model="variables.economicas">
+            <field name="name">TASA DE DESEMPLEO</field>
+            <field name="code">TASADESEMPLEO</field>
+            <field name="currency_id" ref="base.COP"/>
+        </record>
+
+    </data>
+</openerp>

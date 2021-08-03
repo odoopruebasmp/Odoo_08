@@ -1,0 +1,55 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="hr_payslip_concept_report_view">
+            <field name="name">Informe conceptos de nomina</field>
+            <field name="model">hr.payslip.concept.report</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Informe nomina">
+
+                    <group string="Rango de fechas" col="2">
+                        <group>
+                            <field name="start_date"/>
+                        </group>
+                        <group>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <hr/>
+                    <group col="2" string="Filtros adicionales">
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="run_id"/>
+                            <field name="concept_code"/>
+                            <field name="category"/>
+                        </group>
+                        <group>
+                            <field name="payslip_type_id"/>
+                            <!-- <field name="regional_id"/> -->
+                            <field name="state"/>
+                            <field name="workcenter"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="generate" string="Generar" type="object" icon="gtk-execute"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancelar" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_payslip_concept_report">
+            <field name="name">Informe Conceptos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.payslip.concept.report</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_mode">form</field>
+        </record>
+
+       <menuitem action="action_hr_payslip_concept_report" id="menu_hr_payslip_concept_report"
+              name="Informe Conceptos" sequence="120" parent="hr_payroll.menu_hr_root_payroll"/>
+
+    </data>
+</openerp>

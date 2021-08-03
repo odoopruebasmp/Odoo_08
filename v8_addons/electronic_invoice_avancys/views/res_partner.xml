@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+    <data>
+        <record id="res_partner_electronic_invoice_form" model="ir.ui.view">
+            <field name="name">res.partner.electronic.invoice.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Factura Electrónica" groups="electronic_invoice_avancys.group_user_electronic_invoice, electronic_invoice_avancys.group_admin_electronic_invoice" attrs="{'invisible': [('type', 'not in', ('default','contact'))]}">
+                        <group>
+                            <group>
+                                <field name="electronic_invoice" />
+                            </group>
+                            <group>
+                                <field name="ei_email" attrs="{'invisible': [('electronic_invoice','=',False)]}" />
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

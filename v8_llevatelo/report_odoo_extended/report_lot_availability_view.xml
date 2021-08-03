@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="stock_report_lot_availability_wizard_view" model="ir.ui.view">
+            <field name="name">Disponibilidad Lotes</field>
+            <field name="model">stock.report.lot.availability.wizard</field>
+            <field name="arch" type="xml">
+            <form string="Informe Disponibilidad de Lotes">
+                <group col="2">
+                    <field name="print_report"/>
+                    <field name="recreate"/>
+                </group>
+                <notebook>
+                    <page string="Productos">
+                        <field name="product_ids" nolabel="1">
+                            <tree>
+                                <field name="default_code"/>
+                                <field name="product_tmpl_id"/>
+                                <field name="categ_id"/>
+                                <field name="qty_available"/>
+                                <field name="uom_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Ubicaciones">
+                        <field name="location_ids" nolabel="1">
+                            <tree>
+                                <field name="complete_name"/>
+                                <field name="usage"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                <footer>
+                    <button name="calc" string="Calcular" type="object" default_focus="1" class="oe_highlight"
+                            attrs="{'invisible': [('recreate','=',True)]}"/>
+                    <button name="calc" string="Calcular" type="object" default_focus="1" class="oe_highlight"
+                            attrs="{'invisible': [('recreate','=',False)]}"
+                            confirm="¿Está seguro en recrear los quants del inventario, esto genera pérdida en la trazabilidad de los movimientos?"/>
+                    o
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="stock_report_lot_availability_act" model="ir.actions.act_window">
+            <field name="name">Disponibilidad Lotes</field>
+            <field name="res_model">stock.report.lot.availability.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock_report_lot_availability_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_stock_report_lot_availability" name="Informe Disponibilidad Lotes" parent="menu_report_avancys_stock" 
+                  action="stock_report_lot_availability_act" sequence="5" groups="report_odoo_extended.group_user_report_avancys_stock"/>
+
+        <record id="stock_report_lot_availability_tree" model="ir.ui.view">
+            <field name="name">stock.report.lot.availability.tree</field>
+            <field name="model">stock.report.lot.availability</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Disponibilidad de Lotes" default_order="product_ref,location,lot">
+                    <field name="product"/>
+                    <field name="location"/>
+                    <field name="lot"/>
+                    <field name="qty"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="stock_report_lot_availability_filter" model="ir.ui.view">
+            <field name="name">stock.report.lot.availability.filter</field>
+            <field name="model">stock.report.lot.availability</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Disponibilidad de Lotes">
+                    <field name="product"/>
+                    <field name="location"/>
+                    <field name="lot"/>
+                    <group expand="0" string="Agrupar Por">
+                        <filter name="product" string="Producto" icon="terp-partner" domain="[]" context="{'group_by':'product'}"/>
+                        <filter name="location" string="Ubicación" icon="terp-partner" domain="[]" context="{'group_by':'location'}"/>
+                        <filter name="lot" string="Lote" icon="terp-partner" domain="[]" context="{'group_by':'lot'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="stock_report_lot_availability_graph" model="ir.ui.view">
+            <field name="name">stock.report.lot.availability.graph</field>
+            <field name="model">stock.report.lot.availability</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Analisis Disponibilidad de Lotes" type="pivot" stacked="True">
+                    <field name="product"/>
+                    <field name="qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="odoo_08" remoteFilesAllowedToDisappearOnAutoupload="false" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="odoo_08">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/oddodes/pycharm" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="odoo_08 (1)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/oddodes/pycharm" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="odoo_08 (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/oddodes/pycharm" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="odoo_08 (3)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/oddodes/pycharm" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root_08">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/Pruebas" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/.pycharm_helpers" />
+            <excludedPath path="/bin" />
+            <excludedPath path="/boot" />
+            <excludedPath path="/dev" />
+            <excludedPath path="/etc" />
+            <excludedPath path="/lib" />
+            <excludedPath path="/lib32" />
+            <excludedPath path="/lib64" />
+            <excludedPath path="/lost+found" />
+            <excludedPath path="/media" />
+            <excludedPath path="/mnt" />
+            <excludedPath path="/opt" />
+            <excludedPath path="/proc" />
+            <excludedPath path="/root" />
+            <excludedPath path="/run" />
+            <excludedPath path="/sbin" />
+            <excludedPath path="/snap" />
+            <excludedPath path="/srv" />
+            <excludedPath path="/sys" />
+            <excludedPath path="/tmp" />
+            <excludedPath path="/usr" />
+            <excludedPath path="/var" />
+            <excludedPath path="/initrd.img" />
+            <excludedPath path="/initrd.img.old" />
+            <excludedPath path="/vmlinuz" />
+            <excludedPath path="/vmlinuz.old" />
+            <excludedPath path="/home/avancys" />
+            <excludedPath path="/home/avcser" />
+            <excludedPath path="/home/docker" />
+            <excludedPath path="/home/jcvaron" />
+            <excludedPath path="/home/mgarcia" />
+            <excludedPath path="/home/oddodes" />
+            <excludedPath path="/home/odoo" />
+            <excludedPath path="/home/public/backups" />
+            <excludedPath path="/home/public/elecctronic_try" />
+            <excludedPath path="/home/public/electronic_invoice_tmp" />
+            <excludedPath path="/home/public/electronic_recadv_tmp" />
+            <excludedPath path="/home/public/filestore" />
+            <excludedPath path="/home/public/ftp_backups" />
+            <excludedPath path="/home/public/dato.txt" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

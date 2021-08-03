@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="ei_batch_process_view_form" model="ir.ui.view">
+            <field name="name">Generación Masiva FE</field>
+            <field name="model">ei.batch.process</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="Facturas a Procesar">
+                        <field name="message" nolabel="1" readonly="1" />
+                    </group>
+                    <h3 class="oe_grey">Nota:</h3>
+                    <ul class="oe_grey">
+                        <li>Facturas Electrónicas con Estado 'No Transferido' o 'Rechazado DIAN'</li>
+                    </ul>
+                    <field name="journals_ids" />
+                    <footer>
+                        <button name="do_process_batch" string="Confirmar" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="ei_batch_process_action" model="ir.actions.act_window">
+            <field name="name">Envio Masivo FE</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ei.batch.process</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem name="Envio Masivo FE" id="menu_ei_batch_process" action="ei_batch_process_action" parent="account.menu_finance_receivables" sequence="1001" groups="electronic_invoice_avancys.group_user_electronic_invoice" />
+    </data>
+</openerp>

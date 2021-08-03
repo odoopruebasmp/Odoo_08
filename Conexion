@@ -1,0 +1,5 @@
+python /opt/openerp/odoo_v8/odoo.py --addons-path="/opt/openerp/odoo_v8/addons/, /opt/v8_moreproducts_stage/, /opt/openerp/aeroo_report_v8" --xmlrpc-port=8014 --db_user=odoo --db_host=localhost --db_password=AvancysDev20140502 --db_port=5432 --database=moreproducts_pruebas_fe --db-filter=moreproducts_pruebas_fe
+
+/home/oddodes/venv/bin/python /home/oddodes/pycharm/openerp/odoo_v8/odoo.py --addons-path="/home/oddodes/pycharm/openerp/odoo_v8/addons/, /home/oddodes/pycharm/v8_moreproducts_stage/, /home/oddodes/pycharm/openerp/aeroo_report_v8" --xmlrpc-port=8014 --db_user=odoo --db_host=localhost --db_password=AvancysDev20140502 --db_port=5432 --database=moreproducts_pruebas_fe --db-filter=moreproducts_pruebas_fe
+
+python /home/oddodes/pycharm/openerp/odoo_v8/odoo.py --addons-path="/home/oddodes/pycharm/openerp/odoo_v8/addons/, /home/oddodes/pycharm/v8_moreproducts_stage/, /home/oddodes/pycharm/openerp/aeroo_report_v8" --xmlrpc-port=8014 --db_user=odoo --db_host=localhost --db_password=AvancysDev20140502 --db_port=5432 --database=moreproducts_pruebas_fe --db-filter=moreproducts_pruebas_fe -u electronic_invoice

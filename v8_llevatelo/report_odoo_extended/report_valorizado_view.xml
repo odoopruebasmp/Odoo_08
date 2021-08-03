@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="value_report_wizard_view" model="ir.ui.view">
+            <field name="name">Valorizado</field>
+            <field name="model">value.report.wizard</field>
+            <field name="arch" type="xml">
+            <form string="Report Valorziado">
+                <group col="2">
+                    <field name="print_report"/>
+                </group>
+                <group col="4">
+                    <field name="date_end"/>
+                </group>
+                <notebook>
+                    <page string="Productos">
+                        <field name="product_ids" nolabel="1">
+                            <tree>
+                                <field name="default_code"/>
+                                <field name="product_tmpl_id"/>
+                                <field name="categ_id"/>
+                                <field name="qty_available"/>
+                                <field name="uom_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <!--
+                    <page string="Ubicaciones">
+                        <field name="location_ids" nolabel="1">
+                            <tree>
+                                <field name="complete_name"/>
+                                <field name="usage"/>
+                            </tree>
+                        </field>
+                    </page>
+                    -->
+                </notebook>
+                <footer>
+                    <button name="compute_value_report" string="Calcular" type="object" default_focus="1" class="oe_highlight"/>
+                    o
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_value_report_wizard" model="ir.actions.act_window">
+            <field name="name">Informe Valorizado</field>
+            <field name="res_model">value.report.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="value_report_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Informe Valorizado [V2]" id="menu_value_report_wizard" parent="menu_report_avancys_stock" action="action_value_report_wizard" sequence="20" groups="report_odoo_extended.group_user_report_avancys_stock"/>
+        
+        <record id="value_line_report_tree_view" model="ir.ui.view">
+            <field name="name">value.line.report.tree.view</field>
+            <field name="model">value.line.report</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Informe Valorizado">
+                    <field name="product_id"/>
+                    <field name="product_name"/>
+                    <field name="default_code"/>
+                    <field name="location_name"/>
+                    <field name="qty"/>
+                    <field name="cost"/>
+                    <field name="total_cost"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="value_line_report_filter" model="ir.ui.view">
+            <field name="name">value.line.report.filter</field>
+            <field name="model">value.line.report</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Informe Valorizado">
+                    <field name="product_id"/>
+                    <field name="product_name"/>
+                    <field name="location_name"/>
+                    <group expand="0" string="Agrupar Por">
+                        <filter name="group_product_id" string="Producto ID" icon="terp-partner" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter name="group_product_name" string="Producto" icon="terp-partner" domain="[]" context="{'group_by':'product_name'}"/>
+                        <filter name="group_location_name" string="Ubicacion" icon="terp-partner" domain="[]" context="{'group_by':'location_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="value_line_report_graph" model="ir.ui.view">
+            <field name="name">value.line.report.graph</field>
+            <field name="model">value.line.report</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Analisis de Kardex" type="pivot" stacked="True">
+                    <field name="product_id"/>
+                    <field name="qty" type="measure"/>
+                    <field name="cost" type="measure"/>
+                    <field name="total_cost" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_value_line_report" model="ir.actions.act_window">
+            <field name="name">Analisis de Valorizado</field>
+            <field name="res_model">value.line.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph,tree</field>
+            <field name="usage">menu</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</openerp>

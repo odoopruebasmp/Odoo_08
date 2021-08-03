@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a01f9ed9-a4c1-46ac-aa21-7a9e65c7f10b" name="odoor_08">
+        <fileTransfer accessType="SFTP" host="192.168.50.6" port="5006" sshConfigId="da4754b7-0125-4f8a-b4af-9758bd470a20" sshConfig="root_08">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
